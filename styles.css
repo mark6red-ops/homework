@@ -1,0 +1,375 @@
+:root {
+  --color-primary: #009A44;
+  --color-primary-hover: #007c36;
+  --color-text-dark: #3b3f45;
+  --color-text-light: #5b6067;
+  --color-bg-page: #F5F6FA;
+  --color-bg-white: #FFFFFF;
+  --container-max-width: 110rem;
+  --header-padding: 2rem 4rem;
+  --border-radius: 0.6rem;
+  --border-radius-card: 0 3rem;
+  --shadow-sm: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.05);
+  --font-family: 'Rubik', 'Arial', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('fonts/Rubik-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('fonts/Rubik-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('fonts/Rubik-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('fonts/Rubik-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('fonts/Rubik-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('fonts/Rubik-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background: linear-gradient(180deg, var(--color-bg-white) 0%, var(--color-bg-page) 100%);
+  color: var(--color-text-dark);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--header-padding);
+  background: var(--color-bg-white);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 76.8rem) {
+  header {
+    padding: 1.5rem 2rem;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  max-height: 4rem;
+  display: block;
+}
+
+nav {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-text-dark);
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+.btn {
+  background: var(--color-primary);
+  color: var(--color-bg-white);
+  border: none;
+  padding: 1.4rem 2.6rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 1.6rem;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-hover);
+  opacity: 0.95;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 2.8rem;
+  cursor: pointer;
+  color: var(--color-text-dark);
+}
+
+.menu-item-1,
+.menu-item-2 {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.menu-item-2 {
+  gap: 4rem;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+@media (max-width: 76.8rem) {
+  .container {
+    padding: 3rem 1.5rem;
+  }
+}
+
+.label {
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.6rem;
+}
+
+.label::before {
+  content: "";
+  width: 3rem;
+  height: 0.2rem;
+  background: var(--color-primary);
+  display: inline-block;
+}
+
+h1 {
+  font-size: 4.8rem;
+  margin-bottom: 5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+@media (max-width: 76.8rem) {
+  h1 {
+    font-size: 3.2rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.card {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 76.8rem) {
+  .card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
+}
+
+.image-placeholder {
+  width: 35rem;
+  max-width: 100%;
+  min-width: 0;
+  background: var(--color-bg-white);
+  border-radius: var(--border-radius-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  aspect-ratio: 350 / 220;
+}
+
+@media (max-width: 76.8rem) {
+  .image-placeholder {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-content h2 {
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.card-content p {
+  margin-bottom: 1.5rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+}
+
+.card-content ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+.card-content li {
+  margin-bottom: 0.8rem;
+  padding-left: 2rem;
+  position: relative;
+  line-height: 1.4;
+}
+
+.card-content li::before {
+  content: "•";
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 1.8rem;
+  position: absolute;
+  left: 0;
+  top: -0.2rem;
+}
+
+.price-box {
+  background: var(--color-bg-white);
+  padding: 2rem;
+  text-align: center;
+  min-width: 20rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+@media (max-width: 76.8rem) {
+  .price-box {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+.price {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--color-text-dark);
+}
+
+@media (max-width: 76.8rem) {
+  .price {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 76.8rem) {
+  nav {
+    display: none;
+  }
+  
+  .menu-icon {
+    display: block;
+  }
+  
+  .menu-item-1 {
+    gap: 1rem;
+  }
+  
+  .menu-item-2 {
+    gap: 1.5rem;
+  }
+  
+  .btn {
+    padding: 1rem 1.8rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 56.25rem) {
+  .card {
+    gap: 2rem;
+  }
+  
+  .price-box {
+    min-width: 18rem;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
