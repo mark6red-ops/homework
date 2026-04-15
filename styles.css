@@ -5,6 +5,8 @@
   --color-text-light: #5b6067;
   --color-bg-page: #F5F6FA;
   --color-bg-white: #FFFFFF;
+  --color-footer-bg: #1e2a32;
+  --color-footer-text: #e0e4e8;
   --container-max-width: 110rem;
   --header-padding: 2rem 4rem;
   --border-radius: 0.6rem;
@@ -78,6 +80,13 @@ body {
   line-height: 1.5;
   background: linear-gradient(180deg, var(--color-bg-white) 0%, var(--color-bg-page) 100%);
   color: var(--color-text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 header {
@@ -372,4 +381,61 @@ button {
 
 a {
   text-decoration: none;
+}
+
+.footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  padding: 4rem 2rem 2.5rem;
+  margin-top: 6rem;
+}
+
+.footer-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  color: var(--color-footer-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  font-size: 1.6rem;
+}
+
+.footer-nav a:hover {
+  color: var(--color-primary);
+}
+
+.footer-copyright {
+  font-size: 1.4rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 56.25rem) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .footer-nav {
+    justify-content: center;
+  }
+  
+  .footer {
+    margin-top: 4rem;
+    padding: 3rem 1.5rem 2rem;
+  }
 }
